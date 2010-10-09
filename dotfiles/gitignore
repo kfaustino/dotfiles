@@ -1,0 +1,4 @@
+*.swp
+*.tmproj
+.DS_Store
+.rvmrc

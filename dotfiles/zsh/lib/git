@@ -1,0 +1,13 @@
+# get the name of the branch we are on
+function git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "$GIT_PROMPT_PREFIX${ref#refs/heads/}$(_parse_git_dirty)$GIT_PROMPT_SUFFIX"
+}
+
+_parse_git_dirty () {
+  if [[ $(git status -s 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]]; then
+    echo "$GIT_PROMPT_DIRTY"
+  else
+    echo "$GIT_PROMPT_CLEAN"
+  fi
+}

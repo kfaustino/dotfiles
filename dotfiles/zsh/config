@@ -1,0 +1,40 @@
+for config_file (~/bin/dotfiles/zsh/lib/*) source $config_file
+
+# AUTOCOMPLETE
+autoload compinit
+compinit
+
+# matches case insensitive for lowercase
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# pasting with tabs doesn't perform completion
+zstyle ':completion:*' insert-tab pending
+
+# HISTORY
+
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+
+setopt APPEND_HISTORY # Append History from multiple sessions 
+setopt EXTENDED_HISTORY # add timestamps to history
+setopt INC_APPEND_HISTORY 
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY # Don't execute History line directly, allow modification
+
+# VARIABLES
+
+REPORTTIME=10 # Show elapsed time a command took if it took longer than 10 seconds
+
+# Make CTRL-W delete after other chars, not just spaces
+WORDCHARS=${WORDCHARS//[&=\/;\!#%\{]}
+
+# OPTIONS
+
+setopt AUTO_CD
+setopt CDABLE_VARS
+setopt COMPLETE_IN_WORD # Completion is done from both ends
+setopt CORRECT # Spelling correction on commands
+setopt LONG_LIST_JOBS
