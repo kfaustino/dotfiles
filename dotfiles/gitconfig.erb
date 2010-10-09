@@ -1,0 +1,29 @@
+[user]
+	name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
+  email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>	
+[alias]
+  co = checkout
+[apply]
+  whitespace = nowarn
+[color]
+  diff = auto
+  status = auto
+  branch = auto  
+[core]     
+  autocrlf = input
+  editor = mate -w
+  excludesfile = <%= ENV['HOME'] %>/.gitignore  	
+[merge]
+  tool = diffmerge
+[mergetool]
+  keepBackup = false    
+[mergetool "diffmerge"]
+  cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+  trustExitCode = true
+[diff]
+  tool = diffmerge
+[difftool "diffmerge"]
+  cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+[github]
+	user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
+	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
