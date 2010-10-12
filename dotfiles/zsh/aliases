@@ -8,3 +8,4 @@ alias trm="top -o rsize" #PS Resident Size Memory
 
 # GIT
 alias g="git status"
+alias l="git log --oneline --decorate"
