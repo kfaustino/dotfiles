@@ -12,7 +12,9 @@
 [core]     
   autocrlf = input
   editor = mate -w
-  excludesfile = <%= ENV['HOME'] %>/.gitignore  	
+  excludesfile = <%= ENV['HOME'] %>/.gitignore
+[push]
+  default = tracking
 [merge]
   tool = diffmerge
 [mergetool]
