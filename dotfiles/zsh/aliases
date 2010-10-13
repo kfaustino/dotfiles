@@ -9,3 +9,6 @@ alias trm="top -o rsize" #PS Resident Size Memory
 # GIT
 alias g="git status"
 alias l="git log --oneline --decorate"
+
+# Projects
+alias pj="m pragmatic_journal"
