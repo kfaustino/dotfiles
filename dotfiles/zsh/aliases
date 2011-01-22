@@ -10,5 +10,8 @@ alias trm="top -o rsize" #PS Resident Size Memory
 alias g="git status"
 alias l="git log --oneline --decorate"
 
+# SERVERS
+alias ms="mongod run --config /usr/local/Cellar/mongodb/1.6.5-x86_64/mongod.conf"
+
 # Projects
 alias pj="m pragmatic_journal"
