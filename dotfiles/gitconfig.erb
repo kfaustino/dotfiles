@@ -3,6 +3,7 @@
   email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>	
 [alias]
   co = checkout
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [apply]
   whitespace = nowarn
 [color]
@@ -13,6 +14,7 @@
   autocrlf = input
   editor = mate -w
   excludesfile = <%= ENV['HOME'] %>/.gitignore
+  safecrlf = true
 [push]
   default = tracking
 [merge]
