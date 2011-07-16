@@ -1,3 +1,4 @@
+require 'autotest/bundler'
 require 'autotest/fsevent'
 require 'autotest/growl'
 
