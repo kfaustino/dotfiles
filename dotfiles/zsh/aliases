@@ -19,3 +19,8 @@ alias pj="m pragmatic_journal"
 
 # Rails
 alias r="rails"
+
+# Utilities
+
+alias reload='source ~/bin/dotfiles/zsh/aliases'
+alias ea='mate -w ~/bin/dotfiles/zsh/aliases && reload'
