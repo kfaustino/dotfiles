@@ -1,3 +1,0 @@
-rvm_archflags="-arch x86_64"
-export rvm_path="/Users/kfaustino/.rvm"
-rvm_pretty_print_flag=1
