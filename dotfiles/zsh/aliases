@@ -11,10 +11,16 @@ alias g="git status"
 alias l="git log --oneline --decorate"
 
 # SERVERS
-alias ms="mongod run --config /usr/local/Cellar/mongodb/1.6.5-x86_64/mongod.conf"
+alias ms="mongod run --config /usr/local/Cellar/mongodb/2.0.1-x86_64/mongod.conf"
+alias redis="redis-server /usr/local/etc/redis.conf"
 
 # Projects
 alias pj="m pragmatic_journal"
 
 # Rails
 alias r="rails"
+
+# Utilities
+
+alias reload='source ~/bin/dotfiles/zsh/aliases'
+alias ea='mate -w ~/bin/dotfiles/zsh/aliases && reload'

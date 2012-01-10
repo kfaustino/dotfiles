@@ -1,4 +1,4 @@
 export EDITOR="mate -w"
-export NODE_PATH="/usr/local/lib/node"
+export NODE_PATH="/usr/local/lib/node_modules"
 export LC_CTYPE=en_US.UTF-8
-export PATH=$HOME/bin:/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=$HOME/bin:$PATH
