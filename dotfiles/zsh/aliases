@@ -18,8 +18,9 @@ alias ms='mongod run --config /usr/local/Cellar/mongodb/2.0.1-x86_64/mongod.conf
 # Projects
 alias pj="m pragmatic_journal"
 
-# Rails
+# Ruby
 alias r="rails"
+alias be="bundle exec"
 
 # Utilities
 
