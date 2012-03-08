@@ -19,6 +19,6 @@ GIT_PROMPT_SUFFIX="]%{$reset_color%} "
 GIT_PROMPT_CLEAN=""
 GIT_PROMPT_DIRTY="%{$fg[red]%}⚡%{$fg[green]%}"
 
-PROMPT='%{$fg[$NCOLOR]%}%n: %{$fg[cyan]%}%~%{$reset_color%} \
+PROMPT='%{$fg[$NCOLOR]%}%n: %{$fg[cyan]%}%~%{$reset_color%} $(rbenv version-name) \
 $(git_prompt_info)\
 %{$reset_color%}$ '
