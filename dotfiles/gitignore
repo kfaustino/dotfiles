@@ -2,4 +2,5 @@
 *.tmproj
 .DS_Store
 .rvmrc
+.rbenv-version
 .rbenv-gemsets
