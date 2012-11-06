@@ -8,7 +8,7 @@ alias trm="top -o rsize" #PS Resident Size Memory
 
 # GIT
 alias git="hub"
-alias g="git status"
+alias g="git status -sb"
 alias l="git log --oneline --decorate --graph"
 
 # SERVERS
