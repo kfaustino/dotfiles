@@ -1,0 +1,2 @@
+Host heroku.com
+ VerifyHostKeyDNS yes
