@@ -16,9 +16,9 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 
-setopt APPEND_HISTORY # Append History from multiple sessions 
+setopt APPEND_HISTORY # Append History from multiple sessions
 setopt EXTENDED_HISTORY # add timestamps to history
-setopt INC_APPEND_HISTORY 
+setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
 setopt HIST_REDUCE_BLANKS
@@ -36,5 +36,4 @@ WORDCHARS=${WORDCHARS//[&=\/;\!#%\{]}
 setopt AUTO_CD
 setopt CDABLE_VARS
 setopt COMPLETE_IN_WORD # Completion is done from both ends
-setopt CORRECT # Spelling correction on commands
 setopt LONG_LIST_JOBS
