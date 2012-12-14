@@ -1,7 +1,7 @@
 for config_file (~/bin/dotfiles/zsh/lib/*) source $config_file
 
 # AUTOCOMPLETE
-autoload compinit
+autoload -U compinit
 compinit
 
 # matches case insensitive for lowercase
