@@ -1,6 +1,8 @@
 *.swp
 *.tmproj
 .DS_Store
+.env
 .rvmrc
 .rbenv-version
 .rbenv-gemsets
+.ruby-version
