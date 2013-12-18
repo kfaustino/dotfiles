@@ -6,7 +6,7 @@ desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
   Dir['*'].each do |file|
-    next if !File.extname(file).empty? || File.directory?(file) || file =~ /Rakefile/
+    next if File.directory?(file) || file =~ /Rakefile/
     file_name = ".#{file.sub('.erb', '')}"
     
     if File.exist?(File.join(ENV['HOME'], file_name))
