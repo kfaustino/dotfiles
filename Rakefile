@@ -5,10 +5,11 @@ require 'erb'
 desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
-  Dir['*'].each do |file|
-    next if File.directory?(file) || file =~ /Rakefile/
-    file_name = ".#{file.sub('.erb', '')}"
-    
+
+  Dir['**/*'].each do |file|
+    next unless file =~ /\.symlink/
+    file_name = dot_file_name(file)
+
     if File.exist?(File.join(ENV['HOME'], file_name))
       if File.identical? file, File.join(ENV['HOME'], file_name)
         puts "identical ~/#{file_name}"
@@ -34,19 +35,35 @@ task :install do
   end
 end
 
+def dot_file_name(file)
+  file_name = File.basename(file.sub(/\.symlink\.erb|\.symlink/, ''))
+  ".#{file_name}"
+end
+
 def replace_file(file)
-  system %Q{rm -rf "$HOME/.#{file.sub('.erb', '')}"}
+  file_name = dot_file_name(file)
+  system %Q{rm -rf "$HOME/#{file_name}"}
   link_file(file)
 end
 
 def link_file(file)
   if file =~ /.erb$/
-    puts "generating ~/.#{file.sub('.erb', '')}"
-    File.open(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"), 'w') do |new_file|
-      new_file.write ERB.new(File.read(file)).result(binding)
-    end
+    generate_dot_file(file)
   else
-    puts "linking ~/.#{file}"
-    system %Q{ln -vsf "$PWD/#{file}" "$HOME/.#{file}"}
+    link_standard_file(file)
   end
+end
+
+def generate_dot_file(file)
+  file_name = dot_file_name(file)
+  puts "generating ~/.#{file_name}"
+  File.open(File.join(ENV['HOME'], ".#{file_name}"), 'w') do |new_file|
+    new_file.write ERB.new(File.read(file)).result(binding)
+  end
+end
+
+def link_standard_file(file)
+  file_name = dot_file_name(file)
+  puts "linking ~/.#{file_name}"
+  system %Q{ln -vsf "$PWD/#{file}" "$HOME/#{file_name}"}
 end

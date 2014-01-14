@@ -1,6 +1,8 @@
+[hub]
+  protocol = https
 [user]
-	name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
-  email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>	
+  name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
+  email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 [alias]
   co = checkout
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
@@ -9,18 +11,19 @@
 [color]
   diff = auto
   status = auto
-  branch = auto  
-[core]     
+  branch = auto
+  ui = true
+[core]
   autocrlf = input
   editor = mate -w
-  excludesfile = <%= ENV['HOME'] %>/.gitignore
+  excludesfile =~/.gitignore
   safecrlf = true
 [push]
   default = tracking
 [merge]
   tool = diffmerge
 [mergetool]
-  keepBackup = false    
+  keepBackup = false
 [mergetool "diffmerge"]
   cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
   trustExitCode = true

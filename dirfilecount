@@ -1,3 +1,0 @@
-# Show a list of how many files are in each sub directory of current directory.
-
-find . -mindepth 2 | awk -F/ {'print $2'} | uniq -c
