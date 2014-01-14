@@ -56,14 +56,14 @@ end
 
 def generate_dot_file(file)
   file_name = dot_file_name(file)
-  puts "generating ~/.#{file_name}"
-  File.open(File.join(ENV['HOME'], ".#{file_name}"), 'w') do |new_file|
+  puts "generating ~/#{file_name}"
+  File.open(File.join(ENV['HOME'], "#{file_name}"), 'w') do |new_file|
     new_file.write ERB.new(File.read(file)).result(binding)
   end
 end
 
 def link_standard_file(file)
   file_name = dot_file_name(file)
-  puts "linking ~/.#{file_name}"
+  puts "linking ~/#{file_name}"
   system %Q{ln -vsf "$PWD/#{file}" "$HOME/#{file_name}"}
 end
