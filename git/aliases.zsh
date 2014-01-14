@@ -4,6 +4,7 @@ then
   eval "$(hub alias -s)"
 fi
 
+alias ga='git add'
 alias gb='git branch'
 alias gc='git commit'
 alias gca='git commit -a'
