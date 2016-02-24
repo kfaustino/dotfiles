@@ -1,0 +1,3 @@
+function restore_db(){
+  pg_restore --verbose --clean --no-acl --no-owner -h 127.0.0.1 -U $USER -d $1 $2
+}
